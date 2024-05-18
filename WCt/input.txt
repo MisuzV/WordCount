@@ -1,1 +1,1 @@
-sudo service ssh --full-restart
+sudo service ssh --full-restarts
