@@ -38,35 +38,27 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-
 int countCharacters(const char *filename) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
         return -1;
     }
-
     int charCount = 0;
     int ch;
-
     while ((ch = fgetc(file)) != EOF) {
         charCount++;
     }
-
     fclose(file);
     return charCount;
 }
-
-
 int countWords(const char *filename) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
         return -1;
     }
-
     int wordCount = 0;
     int inWord = 0;
     int ch;
-
     while ((ch = fgetc(file)) != EOF) {
         if (isspace(ch) || ch == ',') {
             if (inWord) {
@@ -77,12 +69,9 @@ int countWords(const char *filename) {
             inWord = 1;
         }
     }
-
-
     if (inWord) {
         wordCount++;
     }
-
     fclose(file);
     return wordCount;
 }
